@@ -1,0 +1,7 @@
+configmanager==1.35.1
+matplotlib==3.5.2
+numpy==1.18.5
+opencv_python==4.5.2.54
+pybgs==3.0.0.post2
+skimage==0.0
+videocapture==0.9.5

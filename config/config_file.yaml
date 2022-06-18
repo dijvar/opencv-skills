@@ -1,0 +1,15 @@
+[readable]
+cv_imshow_title = OpenCV Skills
+video_true_webcam_false = True
+video_screenshots_path_folder =  /_resources/_screenshoots/
+video_save_path_folder = /_resources/_outputs/
+video_photos_path_folder =  /_resources/_photos/
+video_videos_path_folder =  /_resources/_videos/
+video_path_file = /_resources/_videos/backg_esti.mp4
+
+
+
+
+[changeable]
+test_changeable = 0
+

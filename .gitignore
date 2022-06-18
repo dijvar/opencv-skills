@@ -1,6 +1,7 @@
 # exclude everything
+_resources/_screenshots/*
 _resources/_videos/*
-_outputs/*
+_resources/_outputs/*
 _resources/_faces/*
 
 # exception to the rule
