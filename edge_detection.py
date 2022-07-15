@@ -9,7 +9,7 @@ kullanılan bir görüntü işleme tekniğidir.
 import cv2
 
 
-img = cv2.imread('_resources/_photos/edge_test.jpg')
+img = cv2.imread('_resources/_images_must/edge_test.jpg')
 # Girdi resmi görüntüleyin
 cv2.imshow('Original', img)
 cv2.waitKey(0)

@@ -99,6 +99,8 @@ Hope this might be useful to someone! :-)
     </th>
   </tr>
 </table>
+
+
 #### Cropping an Image
 
 - **Summary:** 
@@ -109,6 +111,22 @@ Hope this might be useful to someone! :-)
       <p align="center">
            <img src="./_resources/_images_must/readme/cropping_an_image.png" alt="Overview" width="70%" height="60%">
            <br><a href="./cropping_an_image.py" >(cropping_an_image.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
+#### Edge Detection
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/edge_detection.png" alt="Overview" width="70%" height="60%">
+           <br><a href="./edge_detection.py" >(edge_detection.py)</a>
       </p>
     </th>
   </tr>
