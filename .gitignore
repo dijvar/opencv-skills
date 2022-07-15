@@ -5,6 +5,8 @@ _resources/_outputs/*
 _resources/_screenshots/*
 
 # exception to the rule
+!_resources/_images_ignore/.gitkeep
+!_resources/_videos_ignore/.gitkeep
 !_resources/_outputs/.gitkeep
 !_resources/_screenshots/.gitkeep
 !_resources/_videos_must/*
