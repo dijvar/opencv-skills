@@ -24,16 +24,16 @@ Hope this might be useful to someone! :-)
 
 ### Projects
 
-#### Background Estimation
+#### Simple Background Estimation in Videos
 
-- **Summary:** Detected highway lane lines on a video stream. Used OpencV image analysis techniques to identify lines, including Hough Transforms and Canny edge detection.
-- **Keywords:** Computer Vision
+- **Summary:** We can assume most of the time, every pixel sees the same piece of the background because the camera is not moving. Occasionally, a car or other moving object comes in the front and obscure the background.
+- **Keywords:** Background Estimation
 <table style="width:100%">
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_photos/auto.jpg" alt="Overview" width="90%" height="90%">
-           <br><a href="./project_1_lane_finding_basic" name="p1_code">(code)</a>
+           <img src="./_resources/_images_must/background_estimation.png" alt="Overview" width="90%" height="90%">
+           <br><a href="./background_estimation.py" name="background_estimation">(code)</a>
       </p>
     </th>
   </tr>

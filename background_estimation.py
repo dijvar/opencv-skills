@@ -17,6 +17,7 @@ frames = []
 for fid in frameIds:
     cap.set(cv2.CAP_PROP_POS_FRAMES, fid)
     ret, frame = cap.read()
+    frame= cv2.resize(frame, (640, 480))
     frames.append(frame)
  
 # Zaman ekseni boyunca medyanı hesaplayın
@@ -40,6 +41,8 @@ while(ret):
   ret, frame = cap.read()
   # Geçerli çerçeveyi gri tonlamaya dönüştür
   frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+  frame= cv2.resize(frame, (640, 480))
   # Geçerli frame ve median frame in mutlak farkını hesaplayın
   dframe = cv2.absdiff(frame, grayMedianFrame)
   # Treshold to binarize
