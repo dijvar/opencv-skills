@@ -155,5 +155,23 @@ Hope this might be useful to someone! :-)
    </tr>
 </table>
 
+#### Annotating Images
 
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/image_annotating.png" alt="Overview" width="70%" height="60%">
+           <br><a href="./image_annotating.py" >(image_annotating.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
  
+
+
+
+
+
