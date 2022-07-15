@@ -1,8 +1,4 @@
 # exclude everything
-_resources/__images_ignore/*
-_resources/__videos_ignore/*
-_resources/_outputs/*
-_resources/_screenshots/*
 
 # exception to the rule
 !_resources/__images_ignore/.gitkeep

@@ -33,7 +33,7 @@ Hope this might be useful to someone! :-)
     <th>
       <p align="center">
            <img src="./_resources/_images_must/background_estimation.png" alt="Overview" width="90%" height="90%">
-           <br><a href="./background_estimation.py" name="background_estimation">(code)</a>
+           <br><a href="./background_estimation.py" name="background_estimation">(background_estimation.py)</a>
       </p>
     </th>
   </tr>
