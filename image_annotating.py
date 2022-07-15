@@ -4,7 +4,7 @@ https://learnopencv.com/annotating-images-using-opencv/
 '''
 import cv2
 
-img = cv2.imread('_resources/_photos/sample.jpg')
+img = cv2.imread('_resources/_images_must/sample.jpg')
 
 # Resmi görüntüle
 cv2.imshow('Original Image',img)

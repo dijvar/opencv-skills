@@ -132,7 +132,7 @@ Hope this might be useful to someone! :-)
   </tr>
 </table>
 
-#### Hough transform
+#### Hough Transform-Line&Circle
 
 - **Summary:** 
 - **Keywords:** 
@@ -145,6 +145,14 @@ Hope this might be useful to someone! :-)
       </p>
     </th>
   </tr>
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/hough_lines.png" alt="Overview" width="70%" height="60%">
+           <br><a href="./hough_lines.py" >(hough_lines.py)</a>
+      </p>
+    </th>
+   </tr>
 </table>
 
 
