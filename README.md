@@ -32,7 +32,7 @@ Hope this might be useful to someone! :-)
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_images_must/readme/background_estimation.png" alt="Overview" width="90%" height="90%">
+           <img src="./_resources/_images_must/readme/background_estimation.png" alt="Overview" width="70%" height="90%">
            <br><a href="./background_estimation.py" >(background_estimation.py)</a>
       </p>
     </th>
@@ -48,7 +48,7 @@ Hope this might be useful to someone! :-)
     <th>
       <p align="center">
            <img src="./_resources/_images_must/readme/Background-Subtraction.png" alt="Overview" width="90%" height="90%">
-           <br><a href="./Background-Subtraction/background_subtraction_opencv.py" >(background_subtraction_opencv.py)</a>
+           <br><a href="./background_subtraction_opencv.py" >(background_subtraction_opencv.py)</a>
       </p>
     </th>
   </tr>
@@ -62,7 +62,7 @@ Hope this might be useful to someone! :-)
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_images_must/readme/blob_detection.png" alt="Overview" width="40%" height="50%">
+           <img src="./_resources/_images_must/readme/blob_detection.png" alt="Overview" width="50%" height="50%">
            <br><a href="./blob_detection.py" >(blob_detection.py)</a>
       </p>
     </th>
@@ -77,7 +77,7 @@ Hope this might be useful to someone! :-)
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_images_must/readme/color_spaces.png" alt="Overview" width="40%" height="50%">
+           <img src="./_resources/_images_must/readme/color_spaces.png" alt="Overview" width="60%" height="50%">
            <br><a href="./color_spaces.py" >(color_spaces.py)</a>
       </p>
     </th>
@@ -93,8 +93,22 @@ Hope this might be useful to someone! :-)
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_images_must/readme/contour_detection.png" alt="Overview" width="40%" height="50%">
+           <img src="./_resources/_images_must/readme/contour_detection.png" alt="Overview" width="60%" height="60%">
            <br><a href="./contour_detection.py" >(contour_detection.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+#### Cropping an Image
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/cropping_an_image.png" alt="Overview" width="70%" height="60%">
+           <br><a href="./cropping_an_image.py" >(cropping_an_image.py)</a>
       </p>
     </th>
   </tr>
