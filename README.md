@@ -33,7 +33,7 @@ Hope this might be useful to someone! :-)
     <th>
       <p align="center">
            <img src="./_resources/_images_must/background_estimation.png" alt="Overview" width="90%" height="90%">
-           <br><a href="./background_estimation.py" name="background_estimation">(background_estimation.py)</a>
+           <br><a href="./background_estimation.py" >(background_estimation.py)</a>
       </p>
     </th>
   </tr>
@@ -48,7 +48,37 @@ Hope this might be useful to someone! :-)
     <th>
       <p align="center">
            <img src="./_resources/_images_must/Background-Subtraction.png" alt="Overview" width="90%" height="90%">
-           <br><a href="./Background-Subtraction/background_subtraction_opencv.py" name="background_subtraction_opencv">(background_subtraction_opencv.py)</a>
+           <br><a href="./Background-Subtraction/background_subtraction_opencv.py" >(background_subtraction_opencv.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+#### Blob Detection Using OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/blob_detection.png" alt="Overview" width="40%" height="50%">
+           <br><a href="./blob_detection.py" >(blob_detection.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+#### Color spaces in OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/color_spaces.png" alt="Overview" width="40%" height="50%">
+           <br><a href="./color_spaces.py" >(color_spaces.py)</a>
       </p>
     </th>
   </tr>

@@ -7,8 +7,8 @@ import cv2
 import numpy as np
 import matplotlib as plt
 
-bright = cv2.imread('_resources/_photos/cube_bright.jpg')
-dark = cv2.imread('_resources/_photos/cube_dark.jpg')
+bright = cv2.imread('_resources/_images_must/cube_bright.jpg')
+dark = cv2.imread('_resources/_images_must/cube_dark.jpg')
 cv2.imshow("Original Bright", bright)
 cv2.imshow("Original Dark", dark)
 cv2.waitKey()

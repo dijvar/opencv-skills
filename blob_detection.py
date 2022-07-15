@@ -9,7 +9,7 @@ Blob, bir görüntüdeki bazı ortak özellikleri paylaşan bir grup bağlantıl
 import cv2
 import numpy as np
 
-img = cv2.imread("_resources/_photos/blob.jpg", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("_resources/_images_must/blob.jpg", cv2.IMREAD_GRAYSCALE)
 
 # SimpleBlobDetector parametrelerini ayarlayın.
 params = cv2.SimpleBlobDetector_Params()
