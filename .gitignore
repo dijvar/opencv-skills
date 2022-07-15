@@ -1,14 +1,11 @@
 # exclude everything
 _resources/_screenshots/*
-_resources/_videos/*
 _resources/_outputs/*
-_resources/_faces/*
+_resources/__images_ignore/*
+_resources/__videos_ignore/*
 
 # exception to the rule
-!_resources/_videos/backg_esti.mp4
-!_resources/_videos/.gitkeep
-!_outputs/.gitkeep
-!_resources/_faces/.gitkeep
+!_resources/_videos_must/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

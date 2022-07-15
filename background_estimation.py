@@ -7,7 +7,7 @@ import cv2
 from skimage import data, filters
  
 # Videoyu okuyun
-cap = cv2.VideoCapture('_resources/_videos/backg_esti.mp4')
+cap = cv2.VideoCapture('_resources/_videos_must/backg_esti.mp4')
  
 # Rastgele 25 kare seçin
 frameIds = cap.get(cv2.CAP_PROP_FRAME_COUNT) * np.random.uniform(size=25)
