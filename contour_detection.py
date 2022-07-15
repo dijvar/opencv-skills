@@ -9,7 +9,7 @@ https://learnopencv.com/contour-detection-using-opencv-python-c/
 
 import cv2
 
-image = cv2.imread('_resources/_photos/contour.jpg')
+image = cv2.imread('_resources/_images_must/contour.jpg')
 
 
 # görüntüyü gray-scale e dönüştürün
