@@ -39,6 +39,21 @@ Hope this might be useful to someone! :-)
   </tr>
 </table>
 
+#### Background Subtraction with OpenCV and BGS Libraries
+
+- **Summary:** WSteeping into the idea behind these CV-systems we can observe that in most cases the initial steps contain background subtraction (BS), which helps to obtain relatively rough and rapid identifications of the objects in the video stream for their further subtle handling. In the current post, we are going to cover several noteworthy algorithms in terms of accuracy and processing time BS methods: SuBSENSE and LSBP-based GSoC method.
+- **Keywords:** Background Estimation
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/Background-Subtraction.png" alt="Overview" width="90%" height="90%">
+           <br><a href="./Background-Subtraction/background_subtraction_opencv.py" name="background_subtraction_opencv">(background_subtraction_opencv.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
 
 
  
