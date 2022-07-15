@@ -48,7 +48,7 @@ def onTrackbarChange(max_slider):
 
 if __name__ == "__main__":
 	
-	img = cv2.imread('_resources/_photos/lanes.jpg')
+	img = cv2.imread('_resources/_images_must/lanes.jpg')
 
 	# Girdi görüntüsünü kopyalayın
 	dst = np.copy(img)

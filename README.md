@@ -132,4 +132,20 @@ Hope this might be useful to someone! :-)
   </tr>
 </table>
 
+#### Hough transform
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/hough_circles.png" alt="Overview" width="70%" height="60%">
+           <br><a href="./hough_circles.py" >(hough_circles.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
  

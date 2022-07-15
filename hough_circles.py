@@ -59,7 +59,7 @@ def onTrackbarChange(max_slider):
     
 if __name__ == "__main__":
 
-    image = cv2.imread('_resources/_photos/brown_eyes.jpg')
+    image = cv2.imread('_resources/_images_must/brown_eyes.jpg')
     img = image.copy()
 
     # Girdi görüntüsünü gray-scale e dönüştürün
