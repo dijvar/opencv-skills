@@ -6,7 +6,7 @@ import cv2
 import numpy as np
  
 
-image = cv2.imread('_resources/_photos/auto.jpg')
+image = cv2.imread('_resources/_images_must/auto.jpg')
 cv2.imshow('Original Image', image)
 
 # resize() kullanarak yeniden boyutlandırma

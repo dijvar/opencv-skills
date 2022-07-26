@@ -10,7 +10,7 @@ https://learnopencv.com/image-rotation-and-translation-using-opencv/
 import cv2
 import numpy as np
 
-image = cv2.imread('_resources/_photos/cat.jpg')
+image = cv2.imread('_resources/_images_must/cat.jpg')
 
 # görüntünün genişliğini ve yüksekliğini alın
 height, width = image.shape[:2]
@@ -39,4 +39,4 @@ cv2.imshow('Original image', image)
 cv2.waitKey(0)
 
 # # çevirilen görüntüyü diske kaydet
-cv2.imwrite('_outputs/translated_cat_image.jpg', translated_image)
+cv2.imwrite('_resources/_outputs/translated_cat_image.jpg', translated_image)

@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 
-image = cv2.imread('_resources/_photos/cat.jpg')
+image = cv2.imread('_resources/_images_must/cat.jpg')
 
 # görüntünün merkezini elde etmek için yüksekliği ve genişliği 2'ye böl
 height, width = image.shape[:2]
@@ -59,4 +59,4 @@ cv2.imshow('Rotated image', rotated_image)
 cv2.waitKey(0)
 
 # döndürülen görüntüyü diske kaydet
-cv2.imwrite('_outputs/rotated_cat_image.jpg', rotated_image)
+cv2.imwrite('_resources/_outputs/rotated_cat_image.jpg', rotated_image)

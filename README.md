@@ -179,7 +179,38 @@ Hope this might be useful to someone! :-)
     <th>
       <p align="center">
            <img src="./_resources/_images_must/readme/image_filtering.gif" alt="Overview" width="60%" height="50%">
-           <br><a href="./image_filtering.py" >(color_spaces.py)</a>
+           <br><a href="./image_filtering.py" >(image_filtering.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+#### Image Resizing with OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/image_resizing.gif" alt="Overview" width="60%" height="50%">
+           <br><a href="./image_resizing.py" >(image_resizing.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
+#### Image Rotation Using OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/image_rotation.jpg" alt="Overview" width="60%" height="50%">
+           <br><a href="./image_rotation.py" >(image_rotation.py)</a>
       </p>
     </th>
   </tr>
@@ -187,4 +218,18 @@ Hope this might be useful to someone! :-)
 
 
 
+#### Image Translation Using OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/image_translation.jpg" alt="Overview" width="60%" height="50%">
+           <br><a href="./image_translation.py" >(image_translation.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
 
