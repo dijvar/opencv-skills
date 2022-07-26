@@ -85,7 +85,7 @@ Hope this might be useful to someone! :-)
 </table>
 
 
-#### Color spaces in OpenCV
+#### Contour Detection using OpenCV
 
 - **Summary:** 
 - **Keywords:** 
@@ -170,7 +170,20 @@ Hope this might be useful to someone! :-)
   </tr>
 </table>
  
+#### Image Filtering Using Convolution in OpenCV
 
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/image_filtering.gif" alt="Overview" width="60%" height="50%">
+           <br><a href="./image_filtering.py" >(color_spaces.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
 
 
 

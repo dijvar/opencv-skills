@@ -5,7 +5,7 @@ https://learnopencv.com/image-filtering-using-convolution-in-opencv/
 import cv2
 import numpy as np
 
-image = cv2.imread('_resources/_photos/test_image.jpg')
+image = cv2.imread('_resources/_images_must/test_image.jpg')
  
 # Resim boşsa hata mesajı yazdır
 if image is None:
