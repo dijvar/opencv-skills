@@ -32,7 +32,7 @@ Hope this might be useful to someone! :-)
   <tr>
     <th>
       <p align="center">
-           <img src="./_resources/_images_must/readme/night_times_improving.gif" alt="Overview" width="50%" height="50%">
+           <img src="./_resources/_images_must/readme/night_times_improving.gif" alt="Overview" width="90%" height="90%">
            <br><a href="./night_times_improving/night_times_improving.py" >(night_times_improving.py)</a>
       </p>
     </th>

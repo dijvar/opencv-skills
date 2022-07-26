@@ -9,11 +9,11 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Use this script to run text detection deep learning networks using OpenCV.')
 # Input argument
-parser.add_argument('--input', default= 'text_detection/multiple_plates.jpg', 
+parser.add_argument('--input', default= './text_detection/multiple_plates.jpg', 
                     help='Path to input image or video file. Skip this argument to capture frames from a camera.'
                     )
 # Model argument
-parser.add_argument('--model', default="text_detection/frozen_east_text_detection.pb",
+parser.add_argument('--model', default="./text_detection/frozen_east_text_detection.pb",
                     help='Path to a binary .pb file of model contains trained weights.'
                     )
 # Width argument
