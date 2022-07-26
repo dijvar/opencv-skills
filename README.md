@@ -233,3 +233,81 @@ Hope this might be useful to someone! :-)
   </tr>
 </table>
 
+
+#### Mouse in OpenCV GUI
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/mouse.png" alt="Overview" width="60%" height="50%">
+           <br><a href="./mouse.py" >(mouse.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
+#### Read Image
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <br><a href="./read_images.py" >(read_images.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
+#### Read Video
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <br><a href="./read_videos.py" >(read_videos.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
+
+#### Image Thresholding in OpenCV
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+            <img src="./_resources/_images_must/readme/thresholding1.jpg" alt="Overview" width="60%" height="50%">
+        </p>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <p align="center">
+            <img src="./_resources/_images_must/readme/thresholding2.jpg" alt="Overview" width="60%" height="50%">
+        </p>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/thresholding3.jpg" alt="Overview" width="60%" height="50%">
+           <br><a href="./thresholding.py" >(thresholding.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+

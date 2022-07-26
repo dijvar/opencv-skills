@@ -7,9 +7,9 @@ cv2.IMREAD_GRAYSCALE  veya 0
 cv2.IMREAD_COLOR  veya 1 
 '''
 
-img_color = cv2.imread('_resources/_photos/cat.jpg',cv2.IMREAD_COLOR)
-img_grayscale = cv2.imread('_resources/_photos/cat.jpg',cv2.IMREAD_GRAYSCALE)
-img_unchanged = cv2.imread('_resources/_photos/cat.jpg',cv2.IMREAD_UNCHANGED)
+img_color = cv2.imread('_resources/_images_must/cat.jpg',cv2.IMREAD_COLOR)
+img_grayscale = cv2.imread('_resources/_images_must/cat.jpg',cv2.IMREAD_GRAYSCALE)
+img_unchanged = cv2.imread('_resources/_images_must/cat.jpg',cv2.IMREAD_UNCHANGED)
 
 # Orijinal yüksekliği ve genişliği alın
 '''
@@ -32,4 +32,4 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
  
 # cv2.imwrite() işlevi bir görüntüyü diske yazmak için kullanılır.
-cv2.imwrite('_outputs/cat_grayscale.jpg',img_grayscale)
+cv2.imwrite('_resources/_outputs/cat_grayscale.jpg',img_grayscale)

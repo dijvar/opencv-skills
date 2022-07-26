@@ -23,7 +23,7 @@ import cv2
 import matplotlib.pyplot as plt
 
 
-img = cv2.imread('_resources/_photos/super_resolution.png')
+img = cv2.imread('_resources/_image_must/super_resolution.png')
 plt.imshow(img[:,:,::-1])
 plt.show()
 

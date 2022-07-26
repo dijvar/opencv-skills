@@ -7,7 +7,7 @@ vid_capture = cv2.VideoCapture(1) normal kamera
 vid_capture = cv2.VideoCapture('Resources/Image_sequence/Cars%04d.jpg') >>> (Cars0001.jpg, Cars0002.jpg, Cars0003.jpg,...)
 gibi bir görüntü dizinini okumaya yarar 
 '''
-vid_capture = cv2.VideoCapture('Resources/Videos/dog.mp4')
+vid_capture = cv2.VideoCapture('_resources/_videos_must/space_traffic.mp4')
 
 
 if (vid_capture.isOpened() == False):
@@ -45,7 +45,7 @@ vid_capture.release()
 cv2.destroyAllWindows()
 
 
-vid_capture = cv2.VideoCapture('Resources/Videos/dog.mp4')
+vid_capture = cv2.VideoCapture('_resources/_videos_must/space_traffic.mp4')
 
 # get() kullanarak frame boyutu bilgilerini alın
 frame_width = int(vid_capture.get(3)) # 3 >>> (CAP_PROP_FRAME_WIDTH)
@@ -67,7 +67,7 @@ frame_size: Video karelerinin boyutu
 isColor: Sıfır değilse, kodlayıcı renkli çerçeveleri bekleyecek ve kodlayacaktır. 
 Aksi takdirde gri tonlamalı çerçevelerle çalışacaktır (flag şu anda yalnızca Windows'ta desteklenmektedir).
 '''
-output = cv2.VideoWriter('_outputs/output_dog_video_file.avi', cv2.VideoWriter_fourcc('M','J','P','G'), 20, frame_size)
+output = cv2.VideoWriter('_resources/_outputs/output_space_traffic.avi', cv2.VideoWriter_fourcc('M','J','P','G'), 20, frame_size)
 
 while(vid_capture.isOpened()):
     # vid_capture.read() bir tuple döndürür, ilk eleman bool ve ikincisi frame

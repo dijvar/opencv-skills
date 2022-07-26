@@ -25,7 +25,7 @@ def drawRectangle(action, x, y, flags, *userdata):
     cv2.imshow("Window",image)
  
 
-image = cv2.imread("_resources/_photos/sample.jpg")
+image = cv2.imread("_resources/_images_must/sample.jpg")
 # girdi görüntüsünü kopyalıyoruz
 temp = image.copy()
 # Adlandırılmış bir pencere oluşturun
