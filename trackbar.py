@@ -17,7 +17,7 @@ windowName = "Resize Image"
 trackbarValue = "Scale"
  
 
-image = cv2.imread("_resources/_photos/sample.jpg")
+image = cv2.imread("_resources/_images_must/sample.jpg")
  
 # Sonuçları görüntülemek için bir pencere oluşturun ve flag ı Otomatik Boyutlandır olarak ayarlayın
 cv2.namedWindow(windowName, cv2.WINDOW_AUTOSIZE)

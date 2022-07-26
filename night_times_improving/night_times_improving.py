@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from guidedfilter import guided_filter
 
-
+import copy
 
 
 def get_illumination_channel(I, w):
@@ -172,7 +172,7 @@ def reduce_init_t(init_t):
     init_t = init_t.astype(np.float64)/255
     return init_t
 
-im = cv2.imread('dark.png')
+im = cv2.imread('night_times_improving/dark.png')
 orig = im.copy()
 
 tmin = 0.1   # J görüntüsünü oluşturmak için t için minimum değer

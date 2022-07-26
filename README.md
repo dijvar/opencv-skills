@@ -24,6 +24,21 @@ Hope this might be useful to someone! :-)
 
 ### Projects
 
+#### Improving Illumination in Night Time Images
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/night_times_improving.gif" alt="Overview" width="50%" height="50%">
+           <br><a href="./night_times_improving/night_times_improving.py" >(night_times_improving.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
 #### Simple Background Estimation in Videos
 
 - **Summary:** We can assume most of the time, every pixel sees the same piece of the background because the camera is not moving. Occasionally, a car or other moving object comes in the front and obscure the background.
@@ -244,6 +259,20 @@ Hope this might be useful to someone! :-)
       <p align="center">
            <img src="./_resources/_images_must/readme/mouse.png" alt="Overview" width="60%" height="50%">
            <br><a href="./mouse.py" >(mouse.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+#### Trackbar in OpenCV GUI
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <br><a href="./trackbar.py" >(trackbar.py)</a>
       </p>
     </th>
   </tr>
