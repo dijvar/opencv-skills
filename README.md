@@ -17,7 +17,7 @@ Hope this might be useful to someone! :-)
 - [x] video operasyonu var ise bağımsız class olacak
 - [x] tool sınıfı olacak ıse yarar hesaplamalar orda duracak
 - [x] drawing sınıfı olacak o sayede tüm çizimler yapılacak
-- [ ] Her CV çıktısını readme ekle
+- [ ] Her yeni CV yeteneği çıktısını readme ekle
 
 
 ## Overview
