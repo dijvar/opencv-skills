@@ -24,6 +24,22 @@ Hope this might be useful to someone! :-)
 
 ### Projects
 
+#### Camera Calibration
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/camera_calibration.jpg" alt="Overview" width="90%" height="90%">
+           <br><a href="./camera_calibration.py" >(camera_calibration.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
 #### Improving Illumination in Night Time Images
 
 - **Summary:** 
