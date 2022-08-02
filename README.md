@@ -24,6 +24,22 @@ Hope this might be useful to someone! :-)
 
 ### Projects
 
+#### Kalman Filters Estimation
+
+- **Summary:** 
+- **Keywords:** 
+<table style="width:100%">
+  <tr>
+    <th>
+      <p align="center">
+           <img src="./_resources/_images_must/readme/kalman_filters_estimation.jpg" alt="Overview" width="90%" height="90%">
+           <br><a href="./kalman_filters_estimation.py" >(kalman_filters_estimation.py)</a>
+      </p>
+    </th>
+  </tr>
+</table>
+
+
 #### Camera Calibration
 
 - **Summary:** 
