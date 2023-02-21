@@ -49,12 +49,13 @@ class Main():
         try:
             self.ana_islemis_dataframe =pd.read_csv(self.path_ana_islemis_dataframe)
         except:
-            df_cols = ['flight_id', 'toplam_frame' , 'background_sayisi','all_objects']
+            df_cols = ['flight_id', 'toplam_frame' , 'aldigimiz_background_sayisi', 'toplam_background_sayisi','all_objects']
             #ObjectTypes.Airplane.name,ObjectTypes.Helicopter.name,ObjectTypes.Bird.name, ObjectTypes.Drone.name,ObjectTypes.Flock.name,ObjectTypes.Airborne.name]
             self.ana_islemis_dataframe = pd.DataFrame(columns=df_cols)
 
-        
-        self.height, self.width = 2048 , 2448
+
+        self.height, self.width = 2048 , 2448 # 640 * 640 height 3 width 4 küçülüyor
+        self.kucuk_obje_siniri = 15 # sinir ağına orjinalde 16*16 lıklar kabuldur, boyut 4/1 kuculebılır 
         self.fps = 10
 
         self.kac_kere_calissin = 1
@@ -86,7 +87,36 @@ class Main():
                 print("break durdurdu: ",kactayiz)
                 break
 
-            print("üzerine çalışılıyor: ",self.lucky_flight_id)
+            print("üzerine çalışılıyor: ",self.lucky_flight_id, " -----> kactayiz: ", kactayiz)
+
+            temp_kac_object_var = 0
+            temp_kac_framede_obje_var = 0
+            temp_nesnenin_basladigi_yerler = []
+            temp_nesnenin_bittigi_yerler = []
+            for i in range (0,len(self.lucky_flight.valid_encounter)):
+                temp_kac_object_var = temp_kac_object_var +1
+                valid = self.lucky_flight.valid_encounter[i]
+                temp_nesnenin_basladigi_yerler.append(valid['framemin'])
+                temp_nesnenin_bittigi_yerler.append(valid['framemax'])
+                temp_kac_framede_obje_var=temp_kac_framede_obje_var+valid['framecount']
+
+            temp_kac_tane_background_lazim = temp_kac_framede_obje_var / 10 # 97 ise 10 tane-2.örnek ise 10 
+
+            temp_kac_bas_var_kac_son_var = len(temp_nesnenin_basladigi_yerler)  + len(temp_nesnenin_bittigi_yerler) #2 dır-2.ornek ıcın 4 tur
+            temp_kelle_basi_kac_resim = int(temp_kac_tane_background_lazim /temp_kac_bas_var_kac_son_var)
+            hangi_frameleri_alayim = []
+
+            for i in range (0,len(temp_nesnenin_basladigi_yerler)): 
+                bulundugu_ilk_yer = temp_nesnenin_basladigi_yerler[i]  #229 --- varsa kus 100 --228-227-226-225
+                for j in range(temp_kelle_basi_kac_resim,0,-1):
+                    hangi_frameleri_alayim.append(bulundugu_ilk_yer -j) 
+
+            for i in range (0,len(temp_nesnenin_bittigi_yerler)): 
+                bulundugu_ilk_yer = temp_nesnenin_bittigi_yerler[i]  #325 --- varsa kus 350
+                for j in range(0,temp_kelle_basi_kac_resim):
+                    hangi_frameleri_alayim.append(bulundugu_ilk_yer +j+1) 
+
+
 
             '''self.mdPrint("List of Airborne Objects: ")
             for airborne_obj in self.lucky_flight.get_airborne_objects():
@@ -104,7 +134,7 @@ class Main():
 
             rows_for_dnn = self.yoloTxtPreSiamese()
 
-            toplam_frame, background_sayisi= self.yoloDatasetPreVideo()
+            toplam_frame, background_sayisi= self.yoloDatasetPreVideo(hangi_frameleri_alayim)
 
             #dnn
             self.dnnDataset(rows_for_dnn)
@@ -113,7 +143,8 @@ class Main():
 
             self.ana_islemis_dataframe = self.ana_islemis_dataframe.append({'flight_id': str(self.lucky_flight_id),
                                                                         'toplam_frame': str(toplam_frame),
-                                                                        'background_sayisi': str(background_sayisi),
+                                                                        'aldigimiz_background_sayisi': str(len(hangi_frameleri_alayim)),
+                                                                        'toplam_background_sayisi': str(background_sayisi),
                                                                         'all_objects': str(str(set(all_keys_not_remove)))}, 
                                                                         ignore_index=True, verify_integrity=False,
                                                                                 sort=False)
@@ -167,7 +198,7 @@ class Main():
         cv2.imwrite(temp_image_path,img_crop)
         
 
-    def yoloDatasetPreVideo(self,):
+    def yoloDatasetPreVideo(self,hangi_frameleri_alayim):
 
         if os.path.exists(self.yolo_output_dir)==False:
             print('created')
@@ -201,6 +232,12 @@ class Main():
         val_images_yolo_output_dir = os.path.join(val_yolo_output_dir, "images")
         if os.path.exists(val_images_yolo_output_dir)==False:
             os.mkdir(val_images_yolo_output_dir)
+
+
+        background_yolo_output_dir = os.path.join(self.yolo_output_dir, "background"+"_"+str(self.lucky_flight_id))
+        if os.path.exists(background_yolo_output_dir)==False:
+            os.mkdir(background_yolo_output_dir)
+
 
         #bunlar etıketler ıcın
         val_labels_yolo_output_dir = os.path.join(val_yolo_output_dir, "labels")
@@ -271,6 +308,9 @@ class Main():
         for png_file in glob.iglob(os.path.join(current_dir, '*.png')):
             title, ext = os.path.splitext(os.path.basename(png_file))
             txt_file = os.path.join(current_dir, title+'.txt')
+            toplam_frame = toplam_frame + 1
+
+            back_icin = toplam_frame + 2 # TODO back icin anlamadıgımızdan elle gerı cektık
 
             try:
                 frame = cv2.imread(png_file)
@@ -278,7 +318,8 @@ class Main():
                     vision_frame_save_out.write(frame)
                     print("-------video olusturuluyor-----")
                 else:
-                    print("-------video pas geciyor-----")
+                    pass
+                    #print("-------video pas geciyor-----")
             except:
                 print("try-catch save_vision_frame_save")
                 pass
@@ -286,27 +327,35 @@ class Main():
             if counter == index_test:
                 counter = 1
                 try:
-                    shutil.move(png_file, val_images_yolo_output_dir)
                     shutil.move(txt_file, val_labels_yolo_output_dir)
+                    shutil.move(png_file, val_images_yolo_output_dir)
                 except:
                     #print("txt yok olabılır"+ext,title,ext)
                     background_sayisi = background_sayisi +1
+                    if back_icin in hangi_frameleri_alayim:
+                        shutil.move(png_file, val_images_yolo_output_dir)
+                        print("val a back koydum",toplam_frame," back_icin",back_icin)
+                    else:
+                        shutil.move(png_file, background_yolo_output_dir)
             else:
                 try:
-                    shutil.move(png_file, train_images_yolo_output_dir)
                     shutil.move(txt_file, train_labels_yolo_output_dir)
+                    shutil.move(png_file, train_images_yolo_output_dir)
                 except:
                     #print("txt yok olabılır"+ext,title,ext)
                     background_sayisi = background_sayisi +1
+                    if back_icin in hangi_frameleri_alayim:
+                        shutil.move(png_file, train_images_yolo_output_dir)
+                        print("traine a back koydum",toplam_frame," back_icin",back_icin)
+                    else:
+                        shutil.move(png_file, background_yolo_output_dir)
+
                 counter = counter + 1
 
-
-
-
-            toplam_frame = toplam_frame + 1
+            
             cv2.imwrite(png_file, black_img)
 
-
+        print('hangi_frameleri_alayimsayisi',str(hangi_frameleri_alayim))
         print('background_sayisi_sayisi',background_sayisi)
         return toplam_frame, background_sayisi
             
@@ -368,6 +417,11 @@ class Main():
                 enum_value = ObjectTypes[object_type].value
                 yolo_line = '{0} {1} {2} {3} {4}'.format(enum_value, yolo_x, yolo_y, yolo_w, yolo_h)
 
+                en_kucuk_degerden_buyukmu = True
+
+                if w<= self.kucuk_obje_siniri or h<= self.kucuk_obje_siniri:
+                    en_kucuk_degerden_buyukmu = False
+
 
                 temp_image_path_witout_ext = image_base_name.split(".")[0]
                 txt_path= image_path.split(".")[0]
@@ -384,12 +438,14 @@ class Main():
                 infile = open(txt_path,'r', encoding='utf-8').readlines()
                 with open(txt_path, 'w', encoding='utf-8') as outfile:
                     outfile.writelines(infile)
-                    outfile.writelines(yolo_line+"\n")
+                    if en_kucuk_degerden_buyukmu:
+                        outfile.writelines(yolo_line+"\n")
 
 
                 img_crop = cv2.imread(image_path)
                 img_crop = img_crop[y:y+h,x:x+w]
-                self.siameseDataset(object_type,obj_key,img_crop,temp_image_path_witout_ext)
+                if en_kucuk_degerden_buyukmu:
+                    self.siameseDataset(object_type,obj_key,img_crop,temp_image_path_witout_ext)
                 
 
                 if print_show:
