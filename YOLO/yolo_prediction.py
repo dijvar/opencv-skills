@@ -4,7 +4,9 @@ import cv2
 import torch
 
 
-model = YOLO(".\_resources\_models\yolov8s.pt")
+model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_imgsz_1024/weights/best.pt")
+model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_bs_22/weights/best.pt")
+
 
 print('cuda_avail:', torch.cuda.is_available())
 print('cuda_device:', torch.cuda.device_count())
@@ -14,12 +16,13 @@ print('cuda_device:', torch.cuda.device_count())
 # Bir video nesnesi oluşturulur, bu durumda videoyu bir dosyadan okuyoruz
 '''
 vid_capture = cv2.VideoCapture(0) web kamerası
-vid_capture = cv2.VideoCapture(1) normal kamera
+vid_capture = cv2.VideoCapture(1) normal kamera"
 vid_capture = cv2.VideoCapture('Resources/Image_sequence/Cars%04d.jpg') >>> (Cars0001.jpg, Cars0002.jpg, Cars0003.jpg,...)
 gibi bir görüntü dizinini okumaya yarar 
 '''
-vid_capture = cv2.VideoCapture('./_resources/_videos/backg_esti.mp4')
+vid_capture = cv2.VideoCapture('D:/orhan/Belgeler/Datasets/airborne_object_tracking/airborne-detection-starter-kit/data/part1/Images/006345553ed64e77a52d94035e1e747a/006345553ed64e77a52d94035e1e747a.mp4')
 
+height, width = 2048 , 2448 
 
 if (vid_capture.isOpened() == False):
   print("Error opening the video file")
@@ -41,7 +44,8 @@ while(vid_capture.isOpened()):
   ret, frame = vid_capture.read()
   if ret == True:
 
-    frame = cv2.resize(frame, (640,480))
+    frame = cv2.resize(frame, (int(width/2),int(height/2)))
+
 
     results = model.predict(source=frame, save=True, show=True, device=0)
 

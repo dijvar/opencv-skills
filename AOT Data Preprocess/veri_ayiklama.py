@@ -84,7 +84,7 @@ class Main():
             kactayiz = kactayiz+1
 
             if kactayiz>self.kac_kere_calissin:
-                print("break durdurdu: ",kactayiz)
+                print("{}'de break durdurdu: ".format(kactayiz))
                 break
 
             print("üzerine çalışılıyor: ",self.lucky_flight_id, " -----> kactayiz: ", kactayiz)
@@ -198,6 +198,14 @@ class Main():
         cv2.imwrite(temp_image_path,img_crop)
         
 
+    def goruntuyuTasiVeyaOlcekliKopyala(self,png_file, val_images_yolo_output_dir, frame_resize, title):
+        orjinalini_bozma =False
+
+        if orjinalini_bozma:
+            shutil.move(png_file, val_images_yolo_output_dir)
+        else:
+            cv2.imwrite(val_images_yolo_output_dir+"/"+title+".png", frame_resize)
+
     def yoloDatasetPreVideo(self,hangi_frameleri_alayim):
 
         if os.path.exists(self.yolo_output_dir)==False:
@@ -234,9 +242,9 @@ class Main():
             os.mkdir(val_images_yolo_output_dir)
 
 
-        background_yolo_output_dir = os.path.join(self.yolo_output_dir, "background"+"_"+str(self.lucky_flight_id))
+        '''background_yolo_output_dir = os.path.join(self.yolo_output_dir, "background"+"_"+str(self.lucky_flight_id))
         if os.path.exists(background_yolo_output_dir)==False:
-            os.mkdir(background_yolo_output_dir)
+            os.mkdir(background_yolo_output_dir)'''
 
 
         #bunlar etıketler ıcın
@@ -304,7 +312,7 @@ class Main():
         background_sayisi=0
         toplam_frame=0
         index_test = round(100 / split_percentage_valid)
-        black_img = np.zeros((self.height,self.width,3), dtype = np.uint8)
+        #black_img = np.zeros((self.height,self.width,3), dtype = np.uint8)
         for png_file in glob.iglob(os.path.join(current_dir, '*.png')):
             title, ext = os.path.splitext(os.path.basename(png_file))
             txt_file = os.path.join(current_dir, title+'.txt')
@@ -314,46 +322,52 @@ class Main():
 
             try:
                 frame = cv2.imread(png_file)
+                frame_resize = cv2.resize(frame, (int(self.width/2),int(self.height/2)))
                 if vision_frame_save_out is not None:
                     vision_frame_save_out.write(frame)
                     print("-------video olusturuluyor-----")
                 else:
+                    print("-------video pas geciyor-----")
                     pass
-                    #print("-------video pas geciyor-----")
+                    
             except:
                 print("try-catch save_vision_frame_save")
                 pass
             
             if counter == index_test:
                 counter = 1
+
                 try:
                     shutil.move(txt_file, val_labels_yolo_output_dir)
-                    shutil.move(png_file, val_images_yolo_output_dir)
+                    self.goruntuyuTasiVeyaOlcekliKopyala(png_file, val_images_yolo_output_dir, frame_resize, title)
+                    
                 except:
                     #print("txt yok olabılır"+ext,title,ext)
                     background_sayisi = background_sayisi +1
                     if back_icin in hangi_frameleri_alayim:
-                        shutil.move(png_file, val_images_yolo_output_dir)
+                        self.goruntuyuTasiVeyaOlcekliKopyala(png_file, val_images_yolo_output_dir, frame_resize, title)
                         print("val a back koydum",toplam_frame," back_icin",back_icin)
                     else:
-                        shutil.move(png_file, background_yolo_output_dir)
+                        pass
+                        #shutil.move(png_file, background_yolo_output_dir)
             else:
                 try:
                     shutil.move(txt_file, train_labels_yolo_output_dir)
-                    shutil.move(png_file, train_images_yolo_output_dir)
+                    self.goruntuyuTasiVeyaOlcekliKopyala(png_file, train_images_yolo_output_dir, frame_resize, title)
                 except:
                     #print("txt yok olabılır"+ext,title,ext)
                     background_sayisi = background_sayisi +1
                     if back_icin in hangi_frameleri_alayim:
-                        shutil.move(png_file, train_images_yolo_output_dir)
-                        print("traine a back koydum",toplam_frame," back_icin",back_icin)
+                        self.goruntuyuTasiVeyaOlcekliKopyala(png_file, train_images_yolo_output_dir, frame_resize, title)
+                        print("traine a background koydum",toplam_frame," back_icin",back_icin)
                     else:
-                        shutil.move(png_file, background_yolo_output_dir)
+                        pass
+                        #shutil.move(png_file, background_yolo_output_dir)
 
                 counter = counter + 1
 
             
-            cv2.imwrite(png_file, black_img)
+            #cv2.imwrite(png_file, black_img)
 
         print('hangi_frameleri_alayimsayisi',str(hangi_frameleri_alayim))
         print('background_sayisi_sayisi',background_sayisi)
