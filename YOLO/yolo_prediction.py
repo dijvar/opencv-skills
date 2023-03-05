@@ -4,8 +4,8 @@ import cv2
 import torch
 
 
-model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_imgsz_1024/weights/best.pt")
-model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_bs_22/weights/best.pt")
+# model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_imgsz_1024/weights/best.pt")
+model = YOLO("D:/orhan/Belgeler/GitHub/opencv-skills/runs/detect/yolov8x_custom_imgsz_640_pre/weights/best.pt")
 
 
 print('cuda_avail:', torch.cuda.is_available())
@@ -20,7 +20,7 @@ vid_capture = cv2.VideoCapture(1) normal kamera"
 vid_capture = cv2.VideoCapture('Resources/Image_sequence/Cars%04d.jpg') >>> (Cars0001.jpg, Cars0002.jpg, Cars0003.jpg,...)
 gibi bir görüntü dizinini okumaya yarar 
 '''
-vid_capture = cv2.VideoCapture('D:/orhan/Belgeler/Datasets/airborne_object_tracking/airborne-detection-starter-kit/data/part1/Images/006345553ed64e77a52d94035e1e747a/006345553ed64e77a52d94035e1e747a.mp4')
+vid_capture = cv2.VideoCapture('D:/orhan/Belgeler/Datasets/airborne_object_tracking/airborne-detection-starter-kit/data/part1/Images/048f82850a3c46f29d5493c1609104ba/048f82850a3c46f29d5493c1609104ba.mp4')
 
 height, width = 2048 , 2448 
 
@@ -49,7 +49,7 @@ while(vid_capture.isOpened()):
 
     results = model.predict(source=frame, save=True, show=True, device=0)
 
-    cv2.imshow('Frame',frame)
+    # cv2.imshow('Frame',frame)
 
     # waitKey() pencereyi kapatmak için bir tuşa basılmasını bekler ve 20 milisaniye cinsindendir
     key = cv2.waitKey(20)
