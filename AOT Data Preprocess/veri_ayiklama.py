@@ -101,10 +101,9 @@ class Main():
                 #print("flight_id_var: ",self.lucky_flight_id)
 
                 #bır kereye mahsus taşıma 
-                video_out_path = self.images_path+"/"+self.lucky_flight_id+"/"+self.lucky_flight_id+'.mp4'
+                '''video_out_path = self.images_path+"/"+self.lucky_flight_id+"/"+self.lucky_flight_id+'.mp4'
                 dest_video_path= self.video_out_path_train+"/"+self.lucky_flight_id+'.mp4'
-                shutil.move(video_out_path, dest_video_path)
-
+                shutil.move(video_out_path, dest_video_path)'''
                 continue
 
 
