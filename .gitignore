@@ -2,6 +2,7 @@
 _resources/_videos/*
 _outputs/*
 _resources/_faces/*
+runs/*
 
 # exception to the rule
 !_resources/_videos/backg_esti.mp4
